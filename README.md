@@ -19,10 +19,10 @@
 * <ref_file> : location of file with three columns for every SNP in genotype data: ID, ALT, and REF
   * see PRSmix github for more instructions
   * example head of valid ref file:
-    >   ID      ALT     REF
-    >   chr1:10001:T:A  A       T
-    >   chr1:10001:T:C  C       T
-    >   chr1:10108:C:CAA        CAA     C
+    >   ID      ALT     REF<br>
+    >   chr1:10001:T:A  A       T<br>
+    >   chr1:10001:T:C  C       T<br>
+    >   chr1:10108:C:CAA        CAA     C<br>
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
   
 ### runline: ./1.download_format_harmonize.sh <trait_name> <trait_dir> <script_dir> <ref_file> <tool_dir>
