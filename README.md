@@ -25,7 +25,7 @@
     >   chr1:10108:C:CAA        CAA     C
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
   
-### ./1.download_format_harmonize.sh <trait_name> <trait_dir> <script_dir> <ref_file> <tool_dir>
+### runline: ./1.download_format_harmonize.sh <trait_name> <trait_dir> <script_dir> <ref_file> <tool_dir>
 ### example: ./1.download_format_harmonize.sh CAD for_CAD scripts aou_acaf/acaf_threshold.ALL_CHRS.snpinfo tools
 
 
@@ -42,7 +42,7 @@
 * <mem_per_score> : how much memory to use to run a single score (PLINK2 parameter, choose based on environment specs)
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
 
-### ./2.run_plink_scoring.sh <trait_name> <trait_dir> <script_dir> <plink_file_prefix> <num_at_a_time> <num_threads> <mem_per_score> <tool_dir>
+### runline: ./2.run_plink_scoring.sh <trait_name> <trait_dir> <script_dir> <plink_file_prefix> <num_at_a_time> <num_threads> <mem_per_score> <tool_dir>
 ### example: ./2.run_plink_scoring.sh CAD for_CAD scripts aou_acaf/acaf_threshold.chr 3 4 500 tools
 
 
@@ -59,7 +59,7 @@
 * <isbinary> : TRUE if trait is binary else FALSE
 * <ncores> : number of cores to run PRSmix (PRSmix parameter, refer to github for details)
 
-### ./3.run_prsmix.sh <trait_name> <trait_dir> <script_dir> <covariate_file> <pheno_file> <pheno_name> <isbinary> <ncores>
+### runline: ./3.run_prsmix.sh <trait_name> <trait_dir> <script_dir> <covariate_file> <pheno_file> <pheno_name> <isbinary> <ncores>
 ### example: ./3.run_prsmix.sh CAD for_CAD scripts pheno_files/covariate_basics_230912.txt pheno_files/CAD_pheno.tsv has_CAD True 48
 
 
@@ -71,7 +71,7 @@
 * <trait_dir> : location of directory created in step 0, should be named for_<trait_name>
 * <script_dir> : location of directory containing these scripts
 
-### ./4.cal_individual_prsmixes.sh <trait_name> <trait_dir> <script_dir> 
+### runline: ./4.cal_individual_prsmixes.sh <trait_name> <trait_dir> <script_dir> 
 ### example: ./4.cal_individual_prsmixes.sh CAD for_CAD scripts
 
 
