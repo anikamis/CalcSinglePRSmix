@@ -78,8 +78,8 @@
 * <trait_dir> : location of directory created in step 0, should be named for_<trait_name>
 * <script_dir> : location of directory containing these scripts
 
-### runline: ./4.cal_individual_prsmixes.sh <trait_name> <trait_dir> <script_dir> 
-### example: ./4.cal_individual_prsmixes.sh CAD for_CAD scripts
+### runline: ./4.calc_individual_prsmixes.sh <trait_name> <trait_dir> <script_dir> 
+### example: ./4.calc_individual_prsmixes.sh CAD for_CAD scripts
 
 
 
