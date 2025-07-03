@@ -26,7 +26,7 @@ set_up_dirs () {
 
 cwd=$PWD
 
-set_up_dirs $trait $pgs_to_pgp
+set_up_dirs $trait $pgs_list
 
 echo -e "finished all step 0 tasks for ${trait} ! \n"
 cd $cwd
