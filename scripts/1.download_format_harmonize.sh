@@ -22,7 +22,7 @@ download_from_pgs () {
 
     echo -e "starting pgs catalog downloads for trait ${trait}! \n"
 
-    ${tool_dir}/parallel -a weights/${trait}.score_list.txt -j 4 'wget -O  "pgs_catalog_harmonized_weights/{}_hmPOS_GRCh38.txt.gz" https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/{}/ScoringFiles/Harmonized/{}_hmPOS_GRCh38.txt.gz && gzip -d pgs_catalog_harmonized_weights/{}_hmPOS_GRCh38.txt.gz'
+    ${obj_tool_dir}/parallel -a weights/${trait}.score_list.txt -j 4 'wget -O  "pgs_catalog_harmonized_weights/{}_hmPOS_GRCh38.txt.gz" https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/{}/ScoringFiles/Harmonized/{}_hmPOS_GRCh38.txt.gz && gzip -d pgs_catalog_harmonized_weights/{}_hmPOS_GRCh38.txt.gz'
 
     echo -e "finished pgs catalog downloads for trait ${trait}! \n"
 }
@@ -35,7 +35,7 @@ format_pgs_weights () {
     echo -e "starting formatting for trait ${trait}! \n"
 
     # reformat weights from pgs catalog to be prsmix-input compatiblec
-    ${tool_dir}/parallel -j 4 python3 $obj_script_dir/helper/reformat_pgs_weights.py ${trait} {} < weights/${trait}.score_list.txt
+    ${obj_tool_dir}/parallel -j 4 python3 $obj_script_dir/helper/reformat_pgs_weights.py ${trait} {} < weights/${trait}.score_list.txt
 
     echo -e "finished formatting weights for trait ${trait}! \n"
 }
