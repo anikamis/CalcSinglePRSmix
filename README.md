@@ -1,4 +1,11 @@
-# ChronoAdd
+# Run PRSmix for single trait
+#### Given a list of PGS IDs from PGS Catalog, assuming GRCh38
+
+### Requirements:
+* Python3 (with Pandas, NumPy)
+* R (with PRSmix installed, see https://github.com/buutrg/PRSmix for installation details)
+* GNU parallel binary downloaded (https://www.gnu.org/software/parallel/)
+* PLINK2 binary downloaded (https://www.cog-genomics.org/plink/2.0/)
 
 ## Step 0: Directory setup
 
