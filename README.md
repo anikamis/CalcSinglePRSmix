@@ -56,8 +56,8 @@
 * <covariate_file> : location of covariate file containing person_id, age, sex, PC1:10
 * <pheno_file> : location of phenotype file containing IID, phenotype
 * <pheno_name> : name of column in pheno_file containing phenotype
-* <isbinary> : TRUE if trait is binary else FALSE
-* <ncores> : number of cores to run PRSmix (PRSmix parameter, refer to github for details)
+* <\isbinary\> : TRUE if trait is binary else FALSE
+* <\ncores\> : number of cores to run PRSmix (PRSmix parameter, refer to github for details)
 
 ### runline: ./3.run_prsmix.sh <trait_name> <trait_dir> <script_dir> <covariate_file> <pheno_file> <pheno_name> <isbinary> <ncores>
 ### example: ./3.run_prsmix.sh CAD for_CAD scripts pheno_files/covariate_basics_230912.txt pheno_files/CAD_pheno.tsv has_CAD True 48
