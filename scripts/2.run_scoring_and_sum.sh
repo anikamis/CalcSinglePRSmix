@@ -9,7 +9,7 @@ trait_dir=$2
 # location of all scripts, with subdirectory containing helper scripts
 script_dir=$3
 
-# prefix of plink files up til chromosome number, e.g. aou_acaf/acaf_threshold.chr
+# prefix of plink bed files up til chromosome number, e.g. aou_acaf/acaf_threshold.chr
 plink_file_prefix=$4
 
 # how many scores to run at once
@@ -37,7 +37,7 @@ run_plink_scoring () {
     echo -e "starting plink2 scoring for all chromosomes for trait ${trait}! \n"
 
     num_cols=$( head -1 all_harmonized_weights/${trait}.all_harmonized_weights.ALL_SNPS.ALL_CHRS.txt | wc -w ) 
-    ${obj_tool_dir}/parallel -j $num_at_a_time ${obj_tool_dir}/plink2 --threads $num_threads --memory $mem_per_score --pfile $obj_plink_file_prefix{} --score all_harmonized_weights/${trait}.all_harmonized_weights.ALL_SNPS.chr{}.txt cols=fid,scoresums no-mean-imputation header-read --score-col-nums 4-$num_cols --out scores/raw_scores/${trait}.ACAF.chr{} ::: {22..1} X
+    ${obj_tool_dir}/parallel -j $num_at_a_time ${obj_tool_dir}/plink2 --threads $num_threads --memory $mem_per_score --bfile $obj_plink_file_prefix{} --score all_harmonized_weights/${trait}.all_harmonized_weights.ALL_SNPS.chr{}.txt cols=fid,scoresums no-mean-imputation header-read --score-col-nums 4-$num_cols --out scores/raw_scores/${trait}.ACAF.chr{} ::: {22..1} X
 
     echo -e "finished plink2 scoring for all chromosomes for trait ${trait}! \n"
 
