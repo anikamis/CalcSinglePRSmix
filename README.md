@@ -5,7 +5,7 @@
 ### inputs: 
 * <trait_name> : trait name
 * <score_list_file> : file containing list of PGS ids
-### ./0.directory_setup.sh <trait_name> <score_list_file>
+### runline: ./0.directory_setup.sh <trait_name> <score_list_file>
 ### example: ./0.directory_setup.sh CAD CAD.score_list.txt
 
 
