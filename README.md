@@ -6,6 +6,7 @@
 * R (with PRSmix installed, see https://github.com/buutrg/PRSmix for installation details)
 * GNU parallel binary downloaded (https://www.gnu.org/software/parallel/)
 * PLINK2 binary downloaded (https://www.cog-genomics.org/plink/2.0/)
+* Per-chromosome hg38-build genotype files downloaded in PLINK2 .bed/.bim/.fam format and
 
 #### After cloning this repository, you might have to run the following (in terminal) to make the scripts executable:
 ```
