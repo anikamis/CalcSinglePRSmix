@@ -17,9 +17,7 @@ cal_indiv_prsmix () {
 
     in_score_prefix=scores/summed_scores/${trait}.ACAF.ALL
     out_score_prefix=scores/summed_scores/${trait}.ACAF.with_PRSmix.ALL
-
-    num_scores=$( ls add_in_prsmix/with_*/${trait}.score_list.txt | wc -w )
-
+    
     prsmix_dir=for_prsmix
 
     colname=PRSmix.AOU_SUM
