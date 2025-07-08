@@ -28,6 +28,8 @@ score_files_list <- c(score_files_list)
 covar_list <- c(age, sex, paste0("PC", c(1:10)))
 cat_covar_list <- c(sex)
 
+ncores <- as.numeric(ncores)
+
 PRSmix::combine_PRS(
     pheno_file=pheno_file,
     covariate_file=covariate_file,
