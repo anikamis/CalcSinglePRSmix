@@ -46,11 +46,18 @@
 * <plink_file_prefix> : prefix of all plink bed files
 * <num_at_a_time> : how many chromosomes to run at a single time (choose based on environment specs)
 * <num_threads> : how many threads to use to run a single score (PLINK2 parameter, choose based on environment specs)
-* <mem_per_score> : how much memory to use to run a single score (PLINK2 parameter, choose based on environment specs)
+* <mem_per_score> : how much memory (in MB) to use to run a single score (PLINK2 parameter, choose based on environment specs)
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
 
 ### runline: ./2.run_plink_scoring.sh <trait_name> <trait_dir> <script_dir> <plink_file_prefix> <num_at_a_time> <num_threads> <mem_per_score> <tool_dir>
 ### example: ./2.run_plink_scoring.sh CAD for_CAD scripts aou_acaf/acaf_threshold.chr 3 4 500 tools
+
+#### NOTES:
+* re <num_threads>: to see how many threads you have available, run `lscpu` in the terminal. the `Thread(s) per core)` * `Core(s) per socket` * `Socket(s)` is the number of threads you have available. If running in *All of Us*, this should be the same value as the number of CPUs you requested for your environment; you can increase this value by increasing the number of CPUs in your environment.
+  * **make sure <num_at_a_time> * <num_threads> is LESS than this value.** I would recommend leaving at least one thread unused.
+    
+* re <mem_per_score>: to see how much memory (in MB) is available, run `free -m` in the terminal. you should consider the value under `free` to be the amount you have to use. If running in *All of Us*, this should be a bit less than the amount of RAM you requested for your environment (after converting from GB to MB); you can increase this value by increasing the amount of RAM in your environment.
+  * **make sure <num_at_a_time> * <mem_per_score> is LESS than this value.** I would recommend leaving at least 1024 MB (or 1 GB) free.
 
 
 
