@@ -85,9 +85,12 @@ cd ..
 * <pheno_name> : name of column in pheno_file containing phenotype
 * <isbinary\> : TRUE (or T) if trait is binary else FALSE (or F) if continuous
 * <ncores\> : number of cores to run PRSmix (PRSmix parameter, refer to github for details)
+* <age> : name of column containing age in covariate file
+* <sex> : name of column containing sex in covariate file
+* <IID_pheno> : name of column containing people's IDs in covariate/pheno files
 
-### runline: ./scripts/3.run_prsmix.sh <trait_name> <trait_dir> <script_dir> <covariate_file> <pheno_file> <pheno_name> <isbinary\> <ncores\>
-### example: ./scripts/3.run_prsmix.sh CAD for_CAD scripts ../pheno_files/covariate_basics_230912.txt ../pheno_files/CAD_pheno.tsv has_CAD TRUE 12
+### runline: ./scripts/3.run_prsmix.sh <trait_name> <trait_dir> <script_dir> <covariate_file> <pheno_file> <pheno_name> <isbinary\> <ncores\> <age> <sex> <IID_pheno>
+### example: ./scripts/3.run_prsmix.sh CAD for_CAD scripts ../pheno_files/covariate_basics_230912.txt ../pheno_files/CAD_pheno.tsv has_CAD TRUE 12 enrollment_age sex_at_birth person_id
 
 #### NOTES:
 * re <ncores>: to see how many cores you have available, run `lscpu` in the terminal. the `Core(s) per socket` * `Socket(s)` is the number of cores you have available. If running in *All of Us*, you can increase this value by increasing the number of CPUs in your environment.
