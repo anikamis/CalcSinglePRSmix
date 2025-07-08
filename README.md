@@ -16,6 +16,8 @@ cd CalcSinglePrsmix/scripts
 for f in *.sh ; do chmod u+x $f ; done
 cd ..
 ```
+#### I would also recommend running each of these steps in a `tmux` session and setting the timeout limit to 8 hours. If you want to save the output of each command to read through in case of failure, you can add a ` > out` to the end of each runline command to store the output of the command in a text file named `out`.
+
 
 ## Step 0: Directory setup
 
