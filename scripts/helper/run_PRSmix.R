@@ -30,6 +30,8 @@ cat_covar_list <- c(sex)
 
 ncores <- as.numeric(ncores)
 
+liabilityR2 = TRUE
+
 PRSmix::combine_PRS(
     pheno_file=pheno_file,
     covariate_file=covariate_file,
@@ -41,5 +43,6 @@ PRSmix::combine_PRS(
     covar_list=covar_list,
     cat_covar_list=cat_covar_list,
     ncores=ncores,
-    IID_pheno=IID_pheno
+    IID_pheno=IID_pheno,
+    liabilityR2 = liabilityR2
 )
