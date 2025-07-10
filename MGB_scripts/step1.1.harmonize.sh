@@ -42,7 +42,7 @@ harmonize_pgs_weights () {
     
     mkdir weights_chr${chr}
     list=weights_chr${chr}/${trait}.score_list.chr${chr}.txt
-
+    echo "" > $list
     for f in PGS*.txt ;
     do
         pid="${f::-4}"
@@ -79,6 +79,6 @@ echo {22..1} X | tr " " "\n" | head -n $i | tail -n 1 | while read x ; do
 done
 
 
-echo -e "finished all step 1.1 tasks for trait ${trait} for chr${x} ! \n"
+echo -e "finished all step 1.1 tasks for trait ${trait} for chr${chr} ! \n"
 cd $cwd
 
