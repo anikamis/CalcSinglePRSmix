@@ -9,6 +9,8 @@
 #$ -t 1-23
 
 source /broad/software/scripts/useuse
+reuse -q Anaconda3
+
 source activate /home/unix/misraani/.conda/envs/r_env
 
 i=$SGE_TASK_ID
