@@ -49,7 +49,7 @@ format_pgs_weights () {
     echo -e "starting formatting for trait ${trait}! \n"
     
     # reformat weights from pgs catalog to be prsmix-input compatible
-    python3 $obj_script_dir/helper/reformat_pgs_weights.py ${trait}
+    python3 $obj_script_dir/helper/reformat_pgs_weights.py ${trait} ${pgs_id}
     
     echo -e "finished formatting weights for ${pgs_id}! \n"
 }
