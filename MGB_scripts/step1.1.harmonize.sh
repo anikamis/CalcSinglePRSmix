@@ -6,9 +6,11 @@
 #$ -l h_vmem=40G
 #$ -o step11.log
 #$ -e step11.log
-#$ -t 1-23
+#$ -t 1
 
 source /broad/software/scripts/useuse
+reuse -q Anaconda3
+
 source activate /home/unix/misraani/.conda/envs/r_env
 
 i=$SGE_TASK_ID
