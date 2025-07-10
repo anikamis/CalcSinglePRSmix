@@ -1,10 +1,13 @@
 #!/bin/bash
 #$ -cwd
+#$ -N step0
 #$ -l h_rt=168:00:00
 #$ -l s_rt=168:00:00
 #$ -l h_vmem=8G
 #$ -o step0.log
 #$ -e step0.log
+
+source /broad/software/scripts/useuse
 
 # trait is read from first command line argument, dir will be named for_${trait}
 trait=$1

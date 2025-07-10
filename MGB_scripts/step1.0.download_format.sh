@@ -1,10 +1,14 @@
 #!/bin/bash
 #$ -cwd
+#$ -N step1_0
 #$ -l h_rt=168:00:00
 #$ -l s_rt=168:00:00
 #$ -l h_vmem=24G
 #$ -o step10.log
 #$ -e step10.log
+
+source /broad/software/scripts/useuse
+reuse -q Python-3.9
 
 i=$SGE_TASK_ID
 

@@ -1,11 +1,15 @@
 #!/bin/bash
 #$ -cwd
+#$ -N step1_1
 #$ -l h_rt=168:00:00
 #$ -l s_rt=168:00:00
 #$ -l h_vmem=40G
 #$ -o step11.log
 #$ -e step11.log
 #$ -t 1-23
+
+source /broad/software/scripts/useuse
+source activate /home/unix/misraani/.conda/envs/r_env
 
 i=$SGE_TASK_ID
 

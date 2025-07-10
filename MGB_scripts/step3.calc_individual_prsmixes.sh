@@ -1,10 +1,14 @@
 #!/bin/bash
 #$ -cwd
+#$ -N step3
 #$ -l h_rt=168:00:00
 #$ -l s_rt=168:00:00
 #$ -l h_vmem=20G
 #$ -o step3.log
 #$ -e step3.log
+
+source /broad/software/scripts/useuse
+reuse -q Python-3.9
 
 # get name of trait from first command-line argument
 trait=$1

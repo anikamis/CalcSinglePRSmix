@@ -1,11 +1,15 @@
 #!/bin/bash
 #$ -cwd
+#$ -N step2_0
 #$ -l h_rt=168:00:00
 #$ -l s_rt=168:00:00
 #$ -l h_vmem=40G
 #$ -o step20.log
 #$ -e step20.log
 #$ -t 1-23
+
+source /broad/software/scripts/useuse
+reuse -q GCC-5.2
 
 i=$SGE_TASK_ID
 

@@ -4,20 +4,10 @@
 ### Requirements:
 * Python3 (with Pandas, NumPy)
 * R (with PRSmix installed, see https://github.com/buutrg/PRSmix for installation details)
-* GNU parallel binary downloaded (https://www.gnu.org/software/parallel/)
 * PLINK2 binary downloaded (https://www.cog-genomics.org/plink/2.0/)
-* Per-chromosome hg38-build genotype files downloaded in PLINK2 .bed/.bim/.fam format
+* Per-chromosome hg38-build genotype files downloaded in PLINK2 .pgen/.pvar/.psam format (for MGBB)
 
-#### After cloning this repository, you might have to run the following (in terminal) to make the scripts executable:
-```
-# navigate to subdirectory containing all the scripts
-cd CalcSinglePrsmix/scripts
-
-# make each bash script executable
-for f in *.sh ; do chmod u+x $f ; done
-cd ..
-```
-#### I would also recommend running each of these steps in a `tmux` session and setting the timeout limit to 8 hours. If you want to save the output of each command to read through in case of failure, you can add a ` > out` to the end of each runline command to store the output of the command in a text file named `out`.
+#### Before being able to `qsub`, run `use UGER` after sshing onto the broad servers. you do not need to launch the scripts from an interactive session, they can be run via login node
 
 
 ## Step 0: Directory setup
