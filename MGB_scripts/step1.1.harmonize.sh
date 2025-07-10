@@ -6,7 +6,7 @@
 #$ -l h_vmem=40G
 #$ -o step11.log
 #$ -e step11.log
-#$ -t 1
+#$ -t 1-23
 
 source /broad/software/scripts/useuse
 reuse -q Anaconda3
