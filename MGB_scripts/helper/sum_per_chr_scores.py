@@ -18,7 +18,7 @@ for score in raw_scores:
     temp = pd.read_csv(score, sep='\t')
 
     cols_to_keep = [x for x in list(temp.columns) if (x != "NAMED_ALLELE_DOSAGE_SUM" and x[-4:] == "_SUM")]
-    new_colnames = [f"{x.split(".chr")[0]}_SUM" for x in cols_to_keep]
+    new_colnames = [f"{x.split('.chr')[0]}_SUM" for x in cols_to_keep]
 
     temp = temp[["IID"] + cols_to_keep]
     temp.columns = ["IID"] + new_colnames
