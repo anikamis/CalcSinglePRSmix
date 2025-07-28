@@ -62,8 +62,25 @@ obj_script_dir=${cwd}/${script_dir}
 
 pgs_id=$( head -n $i ${obj_trait_dir}/weights/${trait}.score_list.txt | tail -1 )
 
-download_from_pgs $trait $pgs_id
-format_pgs_weights $trait $pgs_id
+overwrite=0
+
+if [[ "$overwrite" == "0" ]];
+then
+    outfile="${obj_trait_dir}/weights/${pgs_id}.txt"
+    if [ ! -f $outfile ];
+    then
+        echo "retrying ${pgs_id}"
+        download_from_pgs $trait $pgs_id
+        format_pgs_weights $trait $pgs_id
+    else
+        echo -e "${pgs_id} already downloaded and reformatted"
+    fi
+else
+    download_from_pgs $trait $pgs_id
+    format_pgs_weights $trait $pgs_id
+fi
+
+
 
 echo -e "finished all step 1.0 tasks for score ${pgs_id} ! \n"
 cd $cwd
