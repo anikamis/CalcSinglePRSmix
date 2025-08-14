@@ -111,3 +111,11 @@ cd ..
 
 
 
+## NEXT STEPS: External validation
+
+## this pipeline can, of course, be modified to external validate in other biobanks instead. for our purposes, we've performed this step in MGB
+## please navigate to the subdirectory of this repository named MGB_scripts for a detailed rundown on the second half of this process, as well as relevant scripts
+
+
+
+
