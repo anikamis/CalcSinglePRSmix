@@ -15,7 +15,7 @@
 ### inputs: 
 * <trait_name> : trait name
 * <score_list_file> : file containing list of all PGS inputs
-* <prsmix_weight_list> : output weight file from PRSmix
+* <prsmix_weight_list> : output weight file from PRSmix (named something like <trait>_power.0.95_pthresh.0.05_weight_PRSmix.txt)
 * <which\> : "all" if you want to run all input scores, or "prsmix" if you only want to run scores needed to calculate prsmix
 ### runline: qsub scripts/step0.directory_setup.sh <trait_name> <score_list_file>  <prsmix_weight_list> <which\>
 ### example: qsub ../scripts/step0.directory_setup.sh CAD CAD.score_list.txt CAD_power.0.95_pthres.0.05_weight_PRSmix.txt all
