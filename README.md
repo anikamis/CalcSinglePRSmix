@@ -62,8 +62,8 @@ cd ..
 * <mem_per_score> : how much memory (in MB) to use to run a single score (PLINK2 parameter, choose based on environment specs)
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
 
-### runline: ./scripts/2.run_plink_scoring.sh <trait_name> <trait_dir> <script_dir> <plink_file_prefix> <num_at_a_time> <num_threads> <mem_per_score> <tool_dir>
-### example: ./scripts/2.run_plink_scoring.sh CAD for_CAD scripts ../aou_acaf/acaf_threshold.chr 3 8 30000 ../tools
+### runline: ./scripts/2.run_scoring_and_sum.sh <trait_name> <trait_dir> <script_dir> <plink_file_prefix> <num_at_a_time> <num_threads> <mem_per_score> <tool_dir>
+### example: ./scripts/2.run_scoring_and_sum.sh CAD for_CAD scripts ../aou_acaf/acaf_threshold.chr 3 8 30000 ../tools
 
 #### NOTES:
 * re <num_threads>: to see how many threads you have available, run `lscpu` in the terminal. the `Thread(s) per core)` * `Core(s) per socket` * `Socket(s)` is the number of threads you have available. If running in *All of Us*, this should be the same value as the number of CPUs you requested for your environment; you can increase this value by increasing the number of CPUs in your environment.
