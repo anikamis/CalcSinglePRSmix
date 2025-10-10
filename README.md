@@ -19,6 +19,25 @@ cd ..
 ```
 #### I would also recommend running each of these steps in a `tmux` session and setting the timeout limit to 8 hours. If you want to save the output of each command to read through in case of failure, you can add a ` > out` to the end of each runline command to store the output of the command in a text file named `out`.
 
+## Step 00: Precheck all metadata
+### Along with excluding any scores from publication with pub ID PGP000604 (Truong et al.), also need to exclude any scores with overlap in training dataset and testing dataset (i.e. AoU and MGB, in our case)
+### This step will download all metadata for all scores in our list. Once it's all downloaded, you can grep all the files for "AllofUs" and "MGBB"
+### NOTE: if either of these is found in a file named <pgs_id>_metadata_score_development_samples.csv, remove that pgs_id from the input list. 
+### if it is found in <pgs_id>_metadata_cohorts.csv, then need to manually look up the score, and check if this cohort was part of the development/gwas (and thus needs to be removed), or evaluation (so can be retained)
+
+### inputs:
+* <score_list_file> : file containing list of PGS ids
+* <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
+### runline: ./scripts/00.download_all_metadata.sh <score_list_file> <tool_dir>
+### example: ./scripts/00.download_all_metadata.sh CAD.score_list.txt ../tools
+
+
+### inputs: 
+* <trait_name> : trait name
+* <score_list_file> : file containing list of PGS ids
+### runline: ./scripts/0.directory_setup.sh <trait_name> <score_list_file>
+### example: ./scripts/0.directory_setup.sh CAD CAD.score_list.txt
+
 
 ## Step 0: Directory setup
 
