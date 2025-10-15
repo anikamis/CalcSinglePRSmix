@@ -28,16 +28,16 @@ cd ..
 ### inputs:
 * <score_list_file> : file containing list of PGS ids
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
-### runline: ./scripts/00.download_all_metadata.sh <score_list_file> <tool_dir>
-### example: ./scripts/00.download_all_metadata.sh CAD.score_list.txt ../tools
+### runline: ./CalcSinglePRSmix/scripts/00.download_all_metadata.sh <score_list_file> <tool_dir>
+### example: ./CalcSinglePRSmix/scripts/00.download_all_metadata.sh CAD.score_list.txt ../tools
 
 ### to check for AoU & MGBB: grep -e "AllofUs" -e "MGBB" \*_metadata_cohorts.csv ; grep -e "AllofUs" -e "MGBB" \*_metadata_score_development_samples.csv 
 
 ### inputs: 
 * <trait_name> : trait name
 * <score_list_file> : file containing list of PGS ids
-### runline: ./scripts/0.directory_setup.sh <trait_name> <score_list_file>
-### example: ./scripts/0.directory_setup.sh CAD CAD.score_list.txt
+### runline: ./CalcSinglePRSmix/scripts/0.directory_setup.sh <trait_name> <score_list_file>
+### example: ./CalcSinglePRSmix/scripts/0.directory_setup.sh CAD CAD.score_list.txt
 
 
 ## Step 0: Directory setup
@@ -45,8 +45,8 @@ cd ..
 ### inputs: 
 * <trait_name> : trait name
 * <score_list_file> : file containing list of PGS ids
-### runline: ./scripts/0.directory_setup.sh <trait_name> <score_list_file>
-### example: ./scripts/0.directory_setup.sh CAD CAD.score_list.txt
+### runline: ./CalcSinglePRSmix/scripts/0.directory_setup.sh <trait_name> <score_list_file>
+### example: ./CalcSinglePRSmix/scripts/0.directory_setup.sh CAD CAD.score_list.txt
 
 
 
@@ -65,8 +65,8 @@ cd ..
     >   chr1:10108:C:CAA        CAA     C<br>
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
   
-### runline: ./scripts/1.download_format_harmonize.sh <trait_name> <trait_dir> <script_dir> <ref_file> <tool_dir>
-### example: ./scripts/1.download_format_harmonize.sh CAD for_CAD scripts ../aou_acaf/acaf_threshold.ALL_CHRS.snpinfo ../tools
+### runline: ./CalcSinglePRSmix/scripts/1.download_format_harmonize.sh <trait_name> <trait_dir> <script_dir> <ref_file> <tool_dir>
+### example: ./CalcSinglePRSmix/scripts/1.download_format_harmonize.sh CAD for_CAD CalcSinglePRSmix/scripts aou_acaf/acaf_threshold.ALL_CHRS.snpinfo tools
 
 
 
@@ -82,8 +82,8 @@ cd ..
 * <mem_per_score> : how much memory (in MB) to use to run a single score (PLINK2 parameter, choose based on environment specs)
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
 
-### runline: ./scripts/2.run_scoring_and_sum.sh <trait_name> <trait_dir> <script_dir> <plink_file_prefix> <num_at_a_time> <num_threads> <mem_per_score> <tool_dir>
-### example: ./scripts/2.run_scoring_and_sum.sh CAD for_CAD scripts ../aou_acaf/acaf_threshold.chr 5 16 80000 ../tools
+### runline: ./CalcSinglePRSmix/scripts/2.run_scoring_and_sum.sh <trait_name> <trait_dir> <script_dir> <plink_file_prefix> <num_at_a_time> <num_threads> <mem_per_score> <tool_dir>
+### example: ./CalcSinglePRSmix/scripts/2.run_scoring_and_sum.sh CAD for_CAD CalcSinglePRSmix/scripts aou_acaf/acaf_threshold.chr 5 16 80000 tools
 
 #### NOTES:
 * re <num_threads>: to see how many threads you have available, run `lscpu` in the terminal. the `Thread(s) per core)` * `Core(s) per socket` * `Socket(s)` is the number of threads you have available. If running in *All of Us*, this should be the same value as the number of CPUs you requested for your environment; you can increase this value by increasing the number of CPUs in your environment.
@@ -109,8 +109,8 @@ cd ..
 * <sex\> : name of column containing sex in covariate file
 * <IID_pheno> : name of column containing people's IDs in covariate/pheno files
 
-### runline: ./scripts/3.run_prsmix.sh <trait_name> <trait_dir> <script_dir> <covariate_file> <pheno_file> <pheno_name> <isbinary\> <ncores\> <age\> <sex\> <IID_pheno>
-### example: ./scripts/3.run_prsmix.sh CAD for_CAD scripts ../pheno_files/covariate_basics_230912.txt ../pheno_files/CAD_pheno.tsv has_CAD TRUE 12 enrollment_age sex_at_birth person_id
+### runline: ./CalcSinglePRSmix/scripts/3.run_prsmix.sh <trait_name> <trait_dir> <script_dir> <covariate_file> <pheno_file> <pheno_name> <isbinary\> <ncores\> <age\> <sex\> <IID_pheno>
+### example: ./CalcSinglePRSmix/scripts/3.run_prsmix.sh CAD for_CAD CalcSinglePRSmix/scripts pheno_files/covariate_basics_230912.txt pheno_files/CAD_pheno.tsv has_CAD TRUE 12 enrollment_age sex_at_birth person_id
 
 #### NOTES:
 * re <ncores>: to see how many cores you have available, run `lscpu` in the terminal. the `Core(s) per socket` * `Socket(s)` is the number of cores you have available. If running in *All of Us*, you can increase this value by increasing the number of CPUs in your environment.
@@ -126,8 +126,8 @@ cd ..
 * <trait_dir> : location of directory created in step 0, should be named for_<trait_name>
 * <script_dir> : location of directory containing these scripts
 
-### runline: ./scripts/4.calc_individual_prsmixes.sh <trait_name> <trait_dir> <script_dir> 
-### example: ./scripts/4.calc_individual_prsmixes.sh CAD for_CAD scripts
+### runline: ./CalcSinglePRSmix/scripts/4.calc_individual_prsmixes.sh <trait_name> <trait_dir> <script_dir> 
+### example: ./CalcSinglePRSmix/scripts/4.calc_individual_prsmixes.sh CAD for_CAD CalcSinglePRSmix/scripts
 
 
 
