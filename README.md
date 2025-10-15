@@ -31,7 +31,7 @@ cd ..
 ### runline: ./scripts/00.download_all_metadata.sh <score_list_file> <tool_dir>
 ### example: ./scripts/00.download_all_metadata.sh CAD.score_list.txt ../tools
 
-### to check for AoU & MGBB: grep -e "AllofUs" -e "MGBB" *.*
+### to check for AoU & MGBB: grep -e "AllofUs" -e "MGBB" \*_metadata_cohorts.csv ; grep -e "AllofUs" -e "MGBB" \*_metadata_score_development_samples.csv 
 
 ### inputs: 
 * <trait_name> : trait name
