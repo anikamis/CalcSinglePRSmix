@@ -29,7 +29,7 @@ cd ..
 * <score_list_file> : file containing list of PGS ids
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
 ### runline: ./CalcSinglePRSmix/scripts/00.download_all_metadata.sh <score_list_file> <tool_dir>
-### example: ./CalcSinglePRSmix/scripts/00.download_all_metadata.sh CAD.score_list.txt ../tools
+### example: ./CalcSinglePRSmix/scripts/00.download_all_metadata.sh CAD.score_list.txt tools
 
 ### to check for AoU & MGBB: grep -e "AllofUs" -e "MGBB" \*_metadata_cohorts.csv ; grep -e "AllofUs" -e "MGBB" \*_metadata_score_development_samples.csv 
 
