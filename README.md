@@ -110,7 +110,7 @@ cd ..
 * <IID_pheno> : name of column containing people's IDs in covariate/pheno files
 
 ### runline: ./CalcSinglePRSmix/scripts/3.run_prsmix.sh <trait_name> <trait_dir> <script_dir> <covariate_file> <pheno_file> <pheno_name> <isbinary\> <ncores\> <age\> <sex\> <IID_pheno>
-### example: ./CalcSinglePRSmix/scripts/3.run_prsmix.sh CAD for_CAD CalcSinglePRSmix/scripts pheno_files/covariate_basics_230912.txt pheno_files/CAD_pheno.tsv has_CAD TRUE 12 enrollment_age sex_at_birth person_id
+### example: ./CalcSinglePRSmix/scripts/3.run_prsmix.sh CAD for_CAD CalcSinglePRSmix/scripts pheno_files/covariate_basics_230912.txt pheno_files/CAD_pheno.tsv total_pheno TRUE 12 age sex_at_birth person_id
 
 #### NOTES:
 * re <ncores>: to see how many cores you have available, run `lscpu` in the terminal. the `Core(s) per socket` * `Socket(s)` is the number of cores you have available. If running in *All of Us*, you can increase this value by increasing the number of CPUs in your environment.
