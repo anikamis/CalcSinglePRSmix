@@ -17,8 +17,8 @@
 * <score_list_file> : file containing list of all PGS inputs
 * <prsmix_weight_list> : output weight file from PRSmix (named something like <trait\>_power.0.95_pthresh.0.05_weight_PRSmix.txt)
 * <which\> : "all" if you want to run all input scores, or "prsmix" if you only want to run scores needed to calculate prsmix
-### runline: qsub scripts/step0.directory_setup.sh <trait_name> <score_list_file>  <prsmix_weight_list> <which\>
-### example: qsub ../scripts/step0.directory_setup.sh CAD CAD.score_list.txt CAD_power.0.95_pthres.0.05_weight_PRSmix.txt all
+### runline: qsub CalcSinglePRSmix/MGB_scripts/step0.directory_setup.sh <trait_name> <score_list_file>  <prsmix_weight_list> <which\>
+### example: qsub CalcSinglePRSmix/MGB_scripts/step0.directory_setup.sh CAD CAD.score_list.txt CAD_power.0.95_pthres.0.05_weight_PRSmix.txt all
 
 
 
@@ -30,8 +30,8 @@
 * <trait_dir> : location of directory created in step 0, should be named for_<trait_name>
 * <script_dir> : location of directory containing these scripts
   
-### runline: qsub -t 1-<number_of_scores> scripts/step1.0.download_format.sh <trait_name> <trait_dir> <script_dir>
-### example: qsub -t 1-$( wc -l < for_CAD/weights/CAD.score_list.txt ) ../scripts/step1.0.download_format.sh CAD for_CAD ../scripts
+### runline: qsub -t 1-<number_of_scores> CalcSinglePRSmix/MGB_scripts/step1.0.download_format.sh <trait_name> <trait_dir> <script_dir>
+### example: qsub -t 1-$( wc -l < for_CAD/weights/CAD.score_list.txt ) CalcSinglePRSmix/MGB_scripts/step1.0.download_format.sh CAD for_CAD CalcSinglePRSmix/MGB_scripts
 
 
 ## Step 1.1: Harmonize all scores to reference
@@ -48,8 +48,8 @@
     >   chr1:10001:T:C  C       T<br>
     >   chr1:10108:C:CAA        CAA     C<br>
   
-### runline: qsub scripts/step1.1.harmonize.sh <trait_name> <trait_dir> <script_dir> <ref_file>
-### example: qsub ../scripts/step1.1.harmonize.sh CAD for_CAD ../scripts ../mgbb/mgbb.53k_gsa.chr
+### runline: qsub CalcSinglePRSmix/MGB_scripts/step1.1.harmonize.sh <trait_name> <trait_dir> <script_dir> <ref_file>
+### example: qsub CalcSinglePRSmix/MGB_scripts/step1.1.harmonize.sh CAD for_CAD CalcSinglePRSmix/MGB_scripts ../mgbb/mgbb.53k_gsa.chr
 
 
 ## Step 2.0: Run PLINK2 scoring
@@ -61,8 +61,8 @@
 * <plink_file_prefix> : prefix of all plink .bed (if aou) or .pgen (if mgbb) files
 * <tool_dir> : location of directory containg tools, i.e. GNU parallel binary
 
-### runline: qsub scripts/step2.0.run_scoring.sh <trait_name> <trait_dir> <script_dir> <plink_file_prefix> <tool_dir>
-### example: qsub ../scripts/step2.0.run_scoring.sh CAD for_CAD ../scripts ../mgbb/mgbb.53k_gsa.chr ../../tools
+### runline: qsub CalcSinglePRSmix/MGB_scripts/step2.0.run_scoring.sh <trait_name> <trait_dir> <script_dir> <plink_file_prefix> <tool_dir>
+### example: qsub CalcSinglePRSmix/MGB_scripts/step2.0.run_scoring.sh CAD for_CAD CalcSinglePRSmix/MGB_scripts mgbb/mgbb.53k_gsa.chr ../tools
 
 
 ## Step 2.1: Sum all per-chromosome scores together
@@ -72,8 +72,8 @@
 * <trait_dir> : location of directory created in step 0, should be named for_<trait_name>
 * <script_dir> : location of directory containing these scripts
 
-### runline: qsub scripts/step2.1.sum.sh <trait_name> <trait_dir> <script_dir>
-### example: qsub ../scripts/step2.1.sum.sh CAD for_CAD ../scripts 
+### runline: qsub CalcSinglePRSmix/MGB_scripts/step2.1.sum.sh <trait_name> <trait_dir> <script_dir>
+### example: qsub CalcSinglePRSmix/MGB_scripts/scripts/step2.1.sum.sh CAD for_CAD CalcSinglePRSmix/MGB_scripts
 
 
 ## Step 3: Calculate individual's PRSmix scores based on generated weights
@@ -83,8 +83,8 @@
 * <trait_dir> : location of directory created in step 0, should be named for_<trait_name>
 * <script_dir> : location of directory containing these scripts
 
-### runline: qsub step3.calc_individual_prsmixes.sh <trait_name> <trait_dir> <script_dir> 
-### example: qsub ../scripts/step3.calc_individual_prsmixes.sh CAD for_CAD ../scripts
+### runline: qsub CalcSinglePRSmix/MGB_scripts/step3.calc_individual_prsmixes.sh <trait_name> <trait_dir> <script_dir> 
+### example: qsub CalcSinglePRSmix/MGB_scripts/step3.calc_individual_prsmixes.sh CAD for_CAD CalcSinglePRSmix/MGB_scripts
 
 
 
