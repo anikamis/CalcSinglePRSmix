@@ -26,11 +26,11 @@ cal_indiv_prsmix () {
     cd $obj_trait_dir
 
     in_score_prefix=scores/summed_scores/${trait}.ACAF.ALL
-    out_score_prefix=scores/summed_scores/${trait}.ACAF.with_aou_prsmix.ALL
+    out_score_prefix=scores/summed_scores/${trait}.ACAF.with_PRSmix.ALL
     
     prsmix_dir=for_prsmix
 
-    colname=PRSmix.AOU.ALL_SUM
+    colname=PRSmix.AOU_SUM
 
     python3 ${obj_script_dir}/helper/apply_individual_prsmix.py $trait $in_score_prefix $out_score_prefix $prsmix_dir $colname
     
