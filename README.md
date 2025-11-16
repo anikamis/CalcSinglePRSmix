@@ -37,7 +37,7 @@ cd ..
 * <trait_name> : trait name
 * <score_list_file> : file containing list of PGS ids
 ### runline: ./CalcSinglePRSmix/scripts/0.directory_setup.sh <trait_name> <score_list_file>
-### example: ./CalcSinglePRSmix/scripts/0.directory_setup.sh CAD CAD.score_list.txt
+### example: t=CAD ; ./CalcSinglePRSmix/scripts/0.directory_setup.sh ${t} ${t}.score_list.txt
 
 
 ## Step 0: Directory setup
