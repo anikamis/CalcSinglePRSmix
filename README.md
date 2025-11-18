@@ -109,6 +109,10 @@ cd ..
 * <sex\> : name of column containing sex in covariate file
 * <IID_pheno> : name of column containing people's IDs in covariate/pheno files
 
+## NOTE: there are 2 versions of PRSmix you can run. For the original version of PRSmix, run `./CalcSinglePRSmix/scripts/3.run_prsmix.sh`. 
+## For the modified PC-residualized version, run `./CalcSinglePRSmix/scripts/3.run_PC_resid_prsmix.sh`. (Make sure the `devtools` module is installed in R. This version is still run on raw score input)
+### All other arguments are the same. To use the PC-residualized version, simply replace the script name (3.run_prsmix.sh) in the example below with the new script (3.run_PC_resid_prsmix.sh)
+
 ### runline: ./CalcSinglePRSmix/scripts/3.run_prsmix.sh <trait_name> <trait_dir> <script_dir> <covariate_file> <pheno_file> <pheno_name> <isbinary\> <ncores\> <age\> <sex\> <IID_pheno>
 ### example: t=CAD ; ./CalcSinglePRSmix/scripts/3.run_prsmix.sh ${t} for_${t} CalcSinglePRSmix/scripts pheno_files/covariate_basics_230912.txt pheno_files/${t}_pheno.tsv total_pheno TRUE 12 age sex_at_birth person_id
 
