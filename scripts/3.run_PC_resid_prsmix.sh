@@ -54,7 +54,7 @@ run_prsmix () {
     score_files_list=scores/summed_scores/${trait}.ACAF.ALL.sscore
     trait_specific_score_file=for_prsmix/${trait}.score_list.txt
 
-    Rscript --vanilla ${obj_script_dir}/helper/run_PC_resid_PRSmix.R $trait $covariate_file $score_files_list $trait_specific_score_file $pheno_file $pheno_name $isbinary $out $ncores $age $sex $IID_pheno
+    Rscript --vanilla ${obj_script_dir}/helper/run_PC_resid_PRSmix.R $trait $covariate_file $score_files_list $trait_specific_score_file $pheno_file $pheno_name $isbinary $out $ncores $age $sex $IID_pheno ${obj_script_dir}/helper/PC_resid_PRSmix/PRSmix
 
     
     echo -e "finished running all add in PRSmix!"
